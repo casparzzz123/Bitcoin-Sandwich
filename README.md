@@ -1,5 +1,5 @@
 # Bitcoin-Sandwich
-Bitcoin Snadwich Is  a New Bitcoin Thet Is Proof-of-Work
+Bitcoin Sandwich Is  a New Bitcoin Thet Is Proof-of-Work And It use Python!
 
 
 How to Setup?

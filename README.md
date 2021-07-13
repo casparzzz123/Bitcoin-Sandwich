@@ -1,5 +1,5 @@
 # Bitcoin-Sandwich
-Bitcoin Sandwich Is  a New Bitcoin Thet Is Proof-of-Work And It use Python!
+Bitcoin Sandwich Is a New Bitcoin That use Proof-of-Work And It use Python!
 
 
 How to Setup?

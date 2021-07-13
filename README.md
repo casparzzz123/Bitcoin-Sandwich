@@ -13,3 +13,6 @@ How to Setup?
 8. edit miner_config.py and delete the random miner adress and paste your public key adress there
 10. Last MINE!
 11. Have Fun!
+
+
+![sandwich-260nw-104017097](https://user-images.githubusercontent.com/80700684/125523283-2b070f9e-d7b9-4a70-9f52-b8088bec6c0a.png)

@@ -3,14 +3,11 @@
 to use this address (public key) to send or receive any transactions. You can
 have as many addresses as you wish, but keep in mind that if you
 lose its credential data, you will not be able to retrieve it.
-
 - Send coins to another address
 - Retrieve the entire blockchain and check your balance
-
 If this is your first time using this script don't forget to generate
 a new address and edit miner config file with it (only if you are
 going to mine).
-
 Timestamp in hashed message. When you send your transaction it will be received
 by several nodes. If any node mine a block, your transaction will get added to the
 blockchain but other nodes still will have it pending. If any node see that your
@@ -45,10 +42,12 @@ IMPORTANT: save this credentials or you won't be able to recover your wallet\n
         amount = input("Amount: number stating how much do you want to send\n")
         print("=========================================\n\n")
         print("Is everything correct?\n")
-        print("From: {0}\nPrivate Key: {1}\nTo: {2}\nAmount: {3}\n".format(addr_from, private_key, addr_to, amount))
+        print(F"From: {addr_from}\nPrivate Key: {private_key}\nTo: {addr_to}\nAmount: {amount}\n")
         response = input("y/n\n")
         if response.lower() == "y":
             send_transaction(addr_from, private_key, addr_to, amount)
+        elif response.lower() == "n":
+            return wallet()  # return to menu
     elif response == "3":  # Will always occur when response == 3.
         check_transactions()
     else:
@@ -88,8 +87,11 @@ def check_transactions():
     """Retrieve the entire blockchain. With this you can check your
     wallets balance. If the blockchain is to long, it may take some time to load.
     """
-    res = requests.get('http://localhost:5000/blocks')
-    print(res.text)
+    try:
+        res = requests.get('http://localhost:5000/blocks')
+        print(res.text)
+    except requests.ConnectionError:
+        print('Connection error. Make sure that you have run miner.py in another terminal.')
 
     
 
@@ -97,7 +99,6 @@ def generate_ECDSA_keys():
     """This function takes care of creating your private and public (your address) keys.
     It's very important you don't lose any of them or those wallets will be lost
     forever. If someone else get access to your private key, you risk losing your coins.
-
     private_key: str
     public_ley: base64 (to make it shorter)
     """
@@ -110,13 +111,12 @@ def generate_ECDSA_keys():
 
     filename = input("Write the name of your new address: ") + ".txt"
     with open(filename, "w") as f:
-        f.write("Private key: {0}\nWallet address / Public key: {1}".format(private_key, public_key.decode()))
-    print("Your new address and private key are now in the file {0}".format(filename))
+        f.write(F"Private key: {private_key}\nWallet address / Public key: {public_key.decode()}")
+    print(F"Your new address and private key are now in the file {filename}")
 
 def sign_ECDSA_msg(private_key):
     """Sign the message to be sent
     private_key: must be hex
-
     return
     signature: base64 (to make it shorter)
     message: str
@@ -131,9 +131,9 @@ def sign_ECDSA_msg(private_key):
 
 if __name__ == '__main__':
     print("""       =========================================\n
-        Bitcoin Sandwich v1.0.0 - BLOCKCHAIN SYSTEM\n
+        Bitcoin Sandwich - BLOCKCHAIN SYSTEM\n
        =========================================\n\n
-        You can find more help at: https://github.com/cosme12/SimpleCoin\n
+        You can find more help at: https://github.com/casparzzz123/Bitcoin-Sandwich\n
         Make sure you are using the latest version or you may end in
         a parallel chain.\n\n\n""")
     wallet()

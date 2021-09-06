@@ -252,7 +252,7 @@ def welcome_msg():
     print("""       =========================================\n
         Bitcoin Sandwich v1.0.0 - BLOCKCHAIN SYSTEM\n
        =========================================\n\n
-        You can find more help at: https://github.com/cosme12/SimpleCoin\n
+        You can find more help at: https://github.com/casparzzz123/Bitcoin-Sandwich\n
         Make sure you are using the latest version or you may end in
         a parallel chain.\n\n\n""")
 

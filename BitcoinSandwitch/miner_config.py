@@ -3,7 +3,7 @@ more details.
 """
 
 # Write your generated adress here. All coins mined will go to this address
-MINER_ADDRESS = "1qWJVDXpR4A94v958jNEhfP+9MZv67dwQKJJzSu8UDQTnu0Nkc+C/wm+hSlo66AAXdIIWCSkMU9hRz0hf7ydzw=="
+MINER_ADDRESS = "PUT YOUR PUBLIC ADRESS HERE!"
 
 # Write your node url or ip. If you are running it localhost use default
 MINER_NODE_URL = "http://localhost:5000"

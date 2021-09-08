@@ -10,7 +10,8 @@ How to Setup?
 5. Go to yourname.txt (That should be in the same folder)
 6. Copy the public key
 7. Use any text/code editor you want!
-8. edit miner_config.py and delete the random miner adress and paste your public key adress there
+8. edit miner_config.py and delete "PUT YOUR ADRESS HERE" and paste your public key adress there
+9. Run miner.py
 10. Last MINE!
 11. Have Fun!
 

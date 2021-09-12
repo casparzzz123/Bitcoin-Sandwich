@@ -5,7 +5,7 @@ Bitcoin Sandwich Is a New Bitcoin That use Proof-of-Work And It use Python!
 How to Setup?
 1. USE WINDOWS/MAC COMMAND PROMPT NOT Python IDE
 2. Do pip install -r requirements.txt
-3. Now go to wallet.py in command prompt
+3. Now Type: python3 wallet.py in command prompt
 4. Create a Wallet!
 5. Go to yourname.txt (That should be in the same folder)
 6. Copy the public key
